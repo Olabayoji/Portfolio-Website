@@ -23,8 +23,9 @@ import {
     tripguide,
     threejs,
   } from "../assets";
+import { Experience, NavLink, Technology, Testimonial } from "../types/global";
   
-  export const navLinks = [
+  export const navLinks : NavLink[] = [
     {
       id: "about",
       title: "About",
@@ -55,7 +56,7 @@ import {
     },
   ];
   
-  const technologies = [
+  const technologies : Technology[] = [
     {
       name: "HTML 5",
       icon: html,
@@ -110,7 +111,7 @@ import {
     },
   ];
   
-  const experiences = [
+  const experiences : Experience[] = [
     {
       title: "React.js Developer",
       company_name: "Starbucks",
@@ -165,7 +166,7 @@ import {
     },
   ];
   
-  const testimonials = [
+  const testimonials : Testimonial[] = [
     {
       testimonial:
         "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
@@ -259,3 +260,7 @@ import {
   ];
   
   export { services, technologies, experiences, testimonials, projects };
+
+
+
+  
