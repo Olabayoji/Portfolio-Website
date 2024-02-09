@@ -20,6 +20,8 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import next from "./tech/next.png";
+import java from "./tech/java.png";
 
 import digifigs from "./company/digifigs.svg";
 import vella from "./company/vella.jpeg";
@@ -49,6 +51,8 @@ export {
   mongodb,
   nodejs,
   reactjs,
+  next,
+  java,
   redux,
   tailwind,
   typescript,

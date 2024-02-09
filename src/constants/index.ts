@@ -7,10 +7,11 @@ import {
     html,
     css,
     reactjs,
+    next,
     redux,
     tailwind,
     nodejs,
-    mongodb,
+    java,
     git,
     figma,
     docker,
@@ -69,7 +70,7 @@ import { Experience, NavLink, Technology, Testimonial } from "../types/global";
       icon: html,
     },
     {
-      name: "CSS 3",
+      name: "CSS",
       icon: css,
     },
     {
@@ -85,6 +86,10 @@ import { Experience, NavLink, Technology, Testimonial } from "../types/global";
       icon: reactjs,
     },
     {
+      name: "Next JS",
+      icon: next,
+    },
+    {
       name: "Redux Toolkit",
       icon: redux,
     },
@@ -97,25 +102,22 @@ import { Experience, NavLink, Technology, Testimonial } from "../types/global";
       icon: nodejs,
     },
     {
-      name: "MongoDB",
-      icon: mongodb,
+      name: "Java",
+      icon: java,
     },
+ 
     {
-      name: "Three JS",
-      icon: threejs,
-    },
-    {
-      name: "git",
+      name: "Git",
       icon: git,
     },
     {
-      name: "figma",
+      name: "Figma",
       icon: figma,
     },
-    {
-      name: "docker",
-      icon: docker,
-    },
+    // {
+    //   name: "docker",
+    //   icon: docker,
+    // },
   ];
   
   const experiences: Experience[] = [
@@ -153,7 +155,7 @@ import { Experience, NavLink, Technology, Testimonial } from "../types/global";
       company_name: "Vella Finance",
       icon: vella,
       iconBg: "#E6DEDD",
-      date: "March 2022 - September 2021",
+      date: "March 2022 - September 2022",
       points: [
         "Led the technical development of a next-gen mobile application using Ionic and React, facilitating over 5,000 cross-border payments.",
         "Instituted a peer review process, reducing code conflicts and deployment rollbacks by 40%.",
@@ -168,7 +170,7 @@ import { Experience, NavLink, Technology, Testimonial } from "../types/global";
       company_name: "Zummit Infolabs",
       icon: zummit,
       iconBg: "#383E56",
-      date: "December - March 2023",
+      date: "December 2021 - March 2022",
       points: [
         "Contributed to the successful migration of a user interface to a single-page application, resulting in an 8% uplift in user retention.",
         "Acquired advanced proficiency in ReactJS, completing 100 hours of dedicated training and implementing gained knowledge in live projects.",
@@ -178,31 +180,18 @@ import { Experience, NavLink, Technology, Testimonial } from "../types/global";
         "Participated in weekly knowledge-sharing sessions, fostering a culture of continuous learning.",
       ],
     },
+
     {
       title: "Junior Web Developer",
       company_name: "Digital Figures",
       icon: digifigs,
       iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
-      points: [
-        "Revamped a client website for mobile users, improving responsiveness and increasing user activity by 8%.",
-        "Contributed to the successful migration of a user interface to a single-page application, resulting in an 8% uplift in user retention.",
-        "Attained advanced proficiency in ReactJS, completing 100 hours of dedicated training and applying acquired knowledge in live projects.",
-        "Optimised code and assets for web interfaces, resulting in a 20% reduction in load times.",
-        "Collaborated on a team initiative that improved the Agile development process, increasing sprint completion rates by 15%.",
-        "Provided technical support and guidance to junior developers in the team.",
-        "Identified and resolved software bugs, ensuring a smooth user experience.",
-      ],
-    },
-    {
-      title: "Junior Web Developer",
-      company_name: "Digital Figures",
-      icon: digifigs,
-      iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
+      date: "February 2021 - December 2021",
       points: [
         "Revamped a client website for mobile users, improving responsiveness and increasing user activity by 8%.",
         "Piloted SEO strategies that propelled a client's site to the top 5 in local search rankings, achieving a 40% increase in organic traffic.",
+        "Attained advanced proficiency in ReactJS, completing 100 hours of dedicated training and applying acquired knowledge in live projects.",
+
         "Modularised code components, enabling smoother scalability and reducing future development time by an estimated 20%.",
         "Completed a mobile-responsive redesign of a client website using HTML, CSS, and JavaScript, leading to an 8% surge in mobile user engagement.",
         "Collaborated with cross-functional teams to ensure seamless integration of web components.",
@@ -214,14 +203,13 @@ import { Experience, NavLink, Technology, Testimonial } from "../types/global";
       company_name: "Digital Figures",
       icon: digifigs,
       iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
+      date: "February 2021 - May 2021",
       points: [
         "Conducted in-depth user research, translating findings into actionable design improvements and enhancing client web presence.",
         "Successfully proposed and designed a feature implemented across three products, leading to a 10% uplift in user interaction.",
         "Collaborated with the team to integrate the development of user personas, leading to tailored product features and a 12% rise in user satisfaction.",
         "Ensured the technical feasibility of UI/UX design and provided design support during product development.",
         "Contributed to the creation of design prototypes and participated in user testing sessions.",
-        "Adapted to evolving design trends and incorporated them into the product design process.",
       ],
     },
   ];
