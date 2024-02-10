@@ -4,6 +4,8 @@ import creator from "./creator.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
 import github from "./github.png";
+import link from "./link.png";
+import finAnalysis from "./finAnalysis.jpeg";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
@@ -22,6 +24,7 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import next from "./tech/next.png";
 import java from "./tech/java.png";
+import python from "./tech/python.png";
 
 import digifigs from "./company/digifigs.svg";
 import vella from "./company/vella.jpeg";
@@ -29,7 +32,10 @@ import waddle_insurance from "./company/waddle.svg";
 import zummit from "./company/zummit.jpeg";
 import tsb from "./company/tsb.png";
 
-import carrent from "./carrent.png";
+import vella_work from "./vella_work.jpeg";
+import digifigs_work from "./digiFig_work.png";
+import mancala from "./mancala.jpeg";
+
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
@@ -40,6 +46,7 @@ export {
   mobile,
   web,
   github,
+  link,
   menu,
   close,
   css,
@@ -53,16 +60,20 @@ export {
   reactjs,
   next,
   java,
+  python,
   redux,
   tailwind,
   typescript,
   threejs,
   digifigs,
   zummit,
+  digifigs_work,
   vella,
   tsb,
   waddle_insurance,
-  carrent,
+  vella_work,
+  mancala,
+  finAnalysis,
   jobit,
   tripguide,
 };
