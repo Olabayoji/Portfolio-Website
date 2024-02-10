@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { styles } from "../styles";
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -8,7 +9,7 @@ import { SectionWrapper } from "../hoc";
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariant(0)}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
@@ -40,19 +41,19 @@ type ServiceType = {
   icon: string;
 };
 const ServiceCard: React.FC<ServiceType> = ({ index, title, icon }) => (
-  <Tilt className="xs:w-[250px] w-full">
+  <Tilt
+    className="xs:w-[250px] w-full"
+    options={{
+      max: 45,
+      scale: 1,
+      speed: 450,
+    }}
+  >
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
     >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
-      >
+      <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
         <img
           src={icon}
           alt="web-development"

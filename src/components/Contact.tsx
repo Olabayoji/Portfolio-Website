@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
-import { EarthCanvas } from "./Canvas";
+import { EarthCanvas } from "./canvas";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { Formik, Form, Field, ErrorMessage } from "formik";

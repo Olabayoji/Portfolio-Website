@@ -1,5 +1,4 @@
-import React from "react";
-
+/* eslint-disable react-refresh/only-export-components */
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 import BallCanvas from "./canvas/Ball";
@@ -16,4 +15,4 @@ const Tech = () => {
   );
 };
 
-export default SectionWrapper(Tech, "");
+export default SectionWrapper(Tech, "Tech");

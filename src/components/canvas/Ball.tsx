@@ -10,7 +10,7 @@ import {
 } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
-import { TextGeometry } from "three/examples/jsm/Addons.js";
+import { Vector3 } from "three";
 
 type Props = {
   imgUrl: string;
@@ -46,7 +46,7 @@ const Ball: React.FC<Props> = ({ imgUrl, description }) => {
           rotation={[2 * Math.PI, 0, 6.25]}
           scale={1}
           map={decal}
-          flatShading
+          // flatShading
         />
       </mesh>
       {isHovered && <Tooltip position={tooltipPosition} text={description} />}
@@ -82,7 +82,7 @@ const Tooltip: React.FC<{ position: number[]; text: string }> = ({
   text,
 }) => {
   return (
-    <mesh position={position}>
+    <mesh position={new Vector3(position[0], position[1], position[2])}>
       <boxGeometry args={[text.length * 0.2, 0.5, 0.8]} />
       <meshStandardMaterial color="#777390" />
       <Text

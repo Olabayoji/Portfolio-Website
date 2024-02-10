@@ -1,13 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { staggerContainer } from "../utils/motion";
 
-const StarWrapper = (Component, idName) =>
+const StarWrapper = (Component: any, idName: any) =>
   function HOC() {
     return (
       <motion.section
-        variants={staggerContainer()}
+        variants={staggerContainer(0.2, 0.1)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}

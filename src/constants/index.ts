@@ -22,7 +22,6 @@ import {
   zummit,
   tsb,
   digifigs_work,
-  tripguide,
   vella_work,
   finAnalysis,
   mancala,
