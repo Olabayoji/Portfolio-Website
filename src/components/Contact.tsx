@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useRef, RefObject } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
 import { EarthCanvas } from "./Canvas";
@@ -10,7 +10,7 @@ import emailjs from "@emailjs/browser";
 import Spinner from "./Spinner";
 import Modal from "./Modal";
 import { MdMarkEmailRead, MdOutlineError } from "react-icons/md";
-
+import * as yup from "yup";
 interface FormValues {
   name: string;
   email: string;
@@ -73,6 +73,7 @@ const Contact = () => {
           <Formik
             initialValues={{ name: "", email: "", message: "" }}
             onSubmit={handleSubmit}
+            validationSchema={validation}
           >
             {({ isSubmitting }) => (
               <Form className="mt-12 flex flex-col gap-8">
@@ -85,6 +86,11 @@ const Contact = () => {
                     placeholder=""
                     className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
                   />
+                  <ErrorMessage
+                    name="name"
+                    component="div"
+                    className="text-red-500 text-sm"
+                  />
                 </label>
                 <label className="flex flex-col">
                   <span className="text-white font-medium mb-1">
@@ -96,6 +102,11 @@ const Contact = () => {
                     name="email"
                     placeholder=""
                     className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="text-red-500 text-sm"
                   />
                 </label>
                 <label className="flex flex-col">
@@ -110,12 +121,17 @@ const Contact = () => {
                     placeholder=""
                     className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
                   />
+                  <ErrorMessage
+                    name="message"
+                    component="div"
+                    className="text-red-500 text-sm"
+                  />
                 </label>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit min-w-12 text-white font-bold shadow-md shadow-primary hover:bg-tertiary/60 hover:text-white/70 transition-all duration-300 "
+                  className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit min-w-12 text-white font-bold shadow-md shadow-primary hover:bg-tertiary/60 hover:text-white/70 transition-all duration-300"
                 >
                   {loading ? <Spinner /> : "Send"}
                 </button>
@@ -164,3 +180,13 @@ const Contact = () => {
 };
 
 export default SectionWrapper(Contact, "contact");
+
+const validation = yup.object().shape({
+  name: yup.string().trim().required("Name is required"),
+  email: yup
+    .string()
+    .trim()
+    .email("Invalid email address")
+    .required("Email is required"),
+  message: yup.string().trim().required("Message is required"),
+});
