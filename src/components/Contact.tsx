@@ -1,40 +1,30 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useRef, RefObject } from "react";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
 import { EarthCanvas } from "./Canvas";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
-
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import emailjs from "@emailjs/browser";
 import Spinner from "./Spinner";
 import Modal from "./Modal";
 import { MdMarkEmailRead, MdOutlineError } from "react-icons/md";
+
+interface FormValues {
+  name: string;
+  email: string;
+  message: string;
+}
+
 const Contact = () => {
-  const formRef: RefObject<HTMLFormElement> = useRef(null);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
   const [error, setError] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { target } = e;
-    const { name, value } = target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(import.meta.env.VITE_APP_EMAILJS_SERVICE_ID);
+  const handleSubmit = async (values: FormValues, { resetForm }: any) => {
+    // e.preventDefault();
+    setError(false);
     setLoading(true);
     try {
       emailjs
@@ -42,24 +32,20 @@ const Contact = () => {
           // import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
           // import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
           "service_wcgmuqb",
-          "template_f8xvyxo",
+          "template_dc6qsys",
           {
-            from_name: form.name,
+            from_name: values.name,
             to_name: "Olabayoji Oladepo",
-            from_email: form.email,
+            from_email: values.email,
             to_email: "olabayojioladepo@gmail.com",
-            message: form.message,
+            message: values.message,
           },
           "KcDRgIYJCIbkiI_eD"
         )
         .then(
           () => {
             setShowModal(true);
-            setForm({
-              name: "",
-              email: "",
-              message: "",
-            });
+            resetForm();
           },
           (error) => {
             console.error(error);
@@ -84,54 +70,58 @@ const Contact = () => {
         >
           <p className={styles.sectionSubText}>Get in touch</p>
           <h3 className={styles.sectionHeadText}>Contact.</h3>
-
-          <form
-            ref={formRef}
+          <Formik
+            initialValues={{ name: "", email: "", message: "" }}
             onSubmit={handleSubmit}
-            className="mt-12 flex flex-col gap-8"
           >
-            <label className="flex flex-col">
-              <span className="text-white font-medium mb-1">Your Name</span>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder=""
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-              />
-            </label>
-            <label className="flex flex-col">
-              <span className="text-white font-medium mb-1">Your email</span>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder=""
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-              />
-            </label>
-            <label className="flex flex-col">
-              <span className="text-white font-medium mb-1">Your Message</span>
-              <textarea
-                rows={7}
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                placeholder=""
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-              />
-            </label>
+            {({ isSubmitting }) => (
+              <Form className="mt-12 flex flex-col gap-8">
+                <label className="flex flex-col">
+                  <span className="text-white font-medium mb-1">Your Name</span>
+                  <Field
+                    required
+                    type="text"
+                    name="name"
+                    placeholder=""
+                    className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                  />
+                </label>
+                <label className="flex flex-col">
+                  <span className="text-white font-medium mb-1">
+                    Your email
+                  </span>
+                  <Field
+                    required
+                    type="email"
+                    name="email"
+                    placeholder=""
+                    className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                  />
+                </label>
+                <label className="flex flex-col">
+                  <span className="text-white font-medium mb-1">
+                    Your Message
+                  </span>
+                  <Field
+                    required
+                    as="textarea"
+                    rows={7}
+                    name="message"
+                    placeholder=""
+                    className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                  />
+                </label>
 
-            <button
-              type="submit"
-              className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit min-w-12 text-white font-bold shadow-md shadow-primary hover:bg-tertiary/60 hover:text-white/70 transition-all duration-300 "
-              disabled={loading}
-            >
-              {loading ? <Spinner /> : "Send"}
-            </button>
-          </form>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit min-w-12 text-white font-bold shadow-md shadow-primary hover:bg-tertiary/60 hover:text-white/70 transition-all duration-300 "
+                >
+                  {loading ? <Spinner /> : "Send"}
+                </button>
+              </Form>
+            )}
+          </Formik>
         </motion.div>
 
         <motion.div
