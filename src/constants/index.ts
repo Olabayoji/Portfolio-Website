@@ -23,6 +23,7 @@ import {
   tsb,
   digifigs_work,
   vella_work,
+  guess,
   finAnalysis,
   mancala,
   backend,
@@ -278,6 +279,24 @@ const projects = [
     link: false,
   },
   {
+    name: "Guess The Number",
+    description:
+      '"Guess The Number" is a fun and interactive mobile game developed using TypeScript and React Native technologies. With a simple and intuitive user interface, players can input their guesses and receive feedback on whether their guess is too high or too low.',
+    tags: [
+      {
+        name: "TypeScript",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "ReactNative",
+        color: "green-text-gradient",
+      },
+    ],
+    image: guess,
+    source_code_link: "https://github.com/Olabayoji/GuessTheNumber",
+    link: false,
+  },
+  {
     name: "Mancala",
     description:
       "A software engineering coursework project, this Java-based desktop application is designed for users to enjoy the classic board game, Mancala.",
@@ -335,6 +354,10 @@ const projects = [
       {
         name: "Figma",
         color: "orange-text-gradient",
+      },
+      {
+        name: "Redux",
+        color: "blue-text-gradient",
       },
     ],
     image: vella_work,

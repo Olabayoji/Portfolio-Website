@@ -35,6 +35,7 @@ import tsb from "./company/tsb.png";
 import vella_work from "./vella_work.jpeg";
 import digifigs_work from "./digiFig_work.png";
 import mancala from "./mancala.jpeg";
+import guess from "./guess.png";
 
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
@@ -72,6 +73,7 @@ export {
   tsb,
   waddle_insurance,
   vella_work,
+  guess,
   mancala,
   finAnalysis,
   jobit,
