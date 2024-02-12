@@ -60,7 +60,7 @@ const services = [
     icon: creator,
   },
   {
-    title: "AI Entusiast",
+    title: "AI Enthusiast",
     icon: backend,
   },
 ];
