@@ -13,7 +13,7 @@ const Computers: React.FC<ComputersProps> = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={1} groundColor="blue" />
+      <hemisphereLight intensity={1} groundColor="white" />
       <spotLight
         position={[20, 50, 10]}
         angle={0.3}
