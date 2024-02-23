@@ -53,12 +53,12 @@ const App = () => {
           onClick={() => {
             handleMute();
           }}
-          className="fixed bottom-4 right-2 z-50 w-16 h-16"
+          className="fixed bottom-8 right-2 z-50 w-16 h-16"
         >
           {muted ? (
-            <ImVolumeMute2 className="w-7 h-7 md:w-10 md:h-10 text-white" />
+            <ImVolumeMute2 className="md:size-10 size-7 text-white" />
           ) : (
-            <ImVolumeMute className="md:w-10 md:h-10 w-7 h-7 text-white" />
+            <ImVolumeMute className="md:size-10 size-7 text-white" />
           )}
         </button>
       </div>{" "}
