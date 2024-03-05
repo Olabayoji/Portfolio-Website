@@ -31,6 +31,8 @@ import vella from "./company/vella.jpeg";
 import waddle_insurance from "./company/waddle.svg";
 import zummit from "./company/zummit.jpeg";
 import tsb from "./company/tsb.png";
+import spark from "./spark.png";
+import dashboard from "./dashboard.png";
 
 import vella_work from "./vella_work.jpeg";
 import digifigs_work from "./digiFig_work.png";
@@ -71,6 +73,8 @@ export {
   digifigs_work,
   vella,
   tsb,
+  spark,
+  dashboard,
   waddle_insurance,
   vella_work,
   guess,

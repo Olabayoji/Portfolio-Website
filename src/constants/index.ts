@@ -27,6 +27,8 @@ import {
   finAnalysis,
   mancala,
   backend,
+  spark,
+  dashboard,
 } from "../assets";
 import { Experience, NavLink, Technology, Testimonial } from "../types/global";
 
@@ -249,84 +251,6 @@ const testimonials: Testimonial[] = [
 
 const projects = [
   {
-    name: "FinAnalysis",
-    description:
-      "An award winning web-based application, developed from my MSc. dissertation in Computer Science, that utilises machine learning to simplify stock trading analysis.",
-    tags: [
-      {
-        name: "TypeScript",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "React",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Python",
-        color: "yellow-text-gradient",
-      },
-      {
-        name: "Django",
-        color: "orange-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "violet-text-gradient",
-      },
-    ],
-    image: finAnalysis,
-    source_code_link: "https://github.com/Olabayoji/FinAnalysis",
-    link: false,
-  },
-  {
-    name: "Guess The Number",
-    description:
-      '"Guess The Number" is a fun and interactive mobile game developed using TypeScript and React Native technologies. With a simple and intuitive user interface, players can input their guesses and receive feedback on whether their guess is too high or too low.',
-    tags: [
-      {
-        name: "TypeScript",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "ReactNative",
-        color: "green-text-gradient",
-      },
-    ],
-    image: guess,
-    source_code_link: "https://github.com/Olabayoji/GuessTheNumber",
-    link: false,
-  },
-  {
-    name: "Mancala",
-    description:
-      "A software engineering coursework project, this Java-based desktop application is designed for users to enjoy the classic board game, Mancala.",
-    tags: [
-      {
-        name: "Java",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "JavaFX",
-        color: "green-text-gradient",
-      },
-      {
-        name: "SoftwareEngineering",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "UI/UX",
-        color: "violet-text-gradient",
-      },
-      {
-        name: "SceneBuilder",
-        color: "orange-text-gradient",
-      },
-    ],
-    image: mancala,
-    source_code_link: "https://github.com/Olabayoji/Mancala",
-    link: false,
-  },
-  {
     name: "Vella Finance",
     description:
       "A web-based and mobile-based platform that offers end-to-end banking and global payments infrastructure built for enterprises across Africa.",
@@ -389,6 +313,145 @@ const projects = [
     image: digifigs_work,
     source_code_link: "https://digifigs.com/",
     link: true,
+  },
+
+  {
+    name: "FinAnalysis",
+    description:
+      "An award winning web-based application, developed from my MSc. dissertation in Computer Science, that utilises machine learning to simplify stock trading analysis.",
+    tags: [
+      {
+        name: "TypeScript",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "React",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Python",
+        color: "yellow-text-gradient",
+      },
+      {
+        name: "Django",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "violet-text-gradient",
+      },
+    ],
+    image: finAnalysis,
+    source_code_link: "https://github.com/Olabayoji/FinAnalysis",
+    link: false,
+  },
+  {
+    name: "AdminSuite",
+    description:
+      "A web and mobile-compatible real-time CRUD dashboard with integrated Kanban board to simplify project management and task organization. ",
+    tags: [
+      {
+        name: "TypeScript",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "React",
+        color: "green-text-gradient",
+      },
+
+      {
+        name: "Firebase",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "violet-text-gradient",
+      },
+      {
+        name: "AntDesign",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: dashboard,
+    source_code_link: "https://github.com/Olabayoji/crm-dashboard",
+    live_url: "https://crm-dashboard-l44c3cr5v-olabayoji.vercel.app/",
+    link: false,
+  },
+  {
+    name: "Spark",
+    description:
+      "Tailored for an organisation where I volunteer, this platform is designed to seamlessly facilitate the expression of thanks and gratitude.",
+    tags: [
+      {
+        name: "TypeScript",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "React",
+        color: "green-text-gradient",
+      },
+
+      {
+        name: "Refine",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "GraphQL",
+        color: "violet-text-gradient",
+      },
+    ],
+    image: spark,
+    source_code_link: "https://github.com/SycamoreLG23/spark",
+    link: false,
+    live_url: "https://sycamorelg23.github.io/spark",
+  },
+  {
+    name: "Guess The Number",
+    description:
+      "A fun and interactive mobile game with a simple and intuitive user interface that allows players to input their guesses and guide the computer to make the right guess.",
+    tags: [
+      {
+        name: "TypeScript",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "ReactNative",
+        color: "green-text-gradient",
+      },
+    ],
+    image: guess,
+    source_code_link: "https://github.com/Olabayoji/GuessTheNumber",
+    link: false,
+  },
+  {
+    name: "Mancala",
+    description:
+      "A software engineering coursework project, this Java-based desktop application is designed for users to enjoy the classic board game, Mancala.",
+    tags: [
+      {
+        name: "Java",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "JavaFX",
+        color: "green-text-gradient",
+      },
+      {
+        name: "SoftwareEngineering",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "UI/UX",
+        color: "violet-text-gradient",
+      },
+      {
+        name: "SceneBuilder",
+        color: "orange-text-gradient",
+      },
+    ],
+    image: mancala,
+    source_code_link: "https://github.com/Olabayoji/Mancala",
+    link: false,
   },
 ];
 
