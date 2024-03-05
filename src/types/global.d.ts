@@ -37,5 +37,5 @@ export interface Project {
   image: string;
   source_code_link: string;
   link?: boolean;
-  live_url: string;
+  live_url?: string;
 }
